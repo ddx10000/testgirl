@@ -1,5 +1,9 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 /**
  * @author DongDexuan
  * @date 2018/8/22 18:29
@@ -27,5 +31,7 @@ public class Test12 {
         System.out.println(i);
         System.out.println(lo > i);
         System.out.println(lo == i);
+        ArrayList<String> strings = new ArrayList<>();
+        ExecutorService executorService = Executors.newCachedThreadPool();
     }
 }
