@@ -8,12 +8,12 @@ public class Componet1 {
         System.out.println("执行Componet1 Construct: PostConstruct");
     }
     @PostConstruct
-    public void PostConstruct() {
+    public void postConstruct() {
         System.out.println("执行Componet1 PostConstructInit: PostConstruct");
     }
 
     @PreDestroy
-    public void PreDestory(){
+    public void preDestory(){
         System.out.println("执行Componet1 PostConstructInit: PreDestory");
     }
 

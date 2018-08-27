@@ -13,12 +13,12 @@ public class Componet2 {
     }
 
     @PostConstruct
-    public void PostConstruct() {
+    public void postConstruct() {
         System.out.println("执行Componet2 PostConstructInit: PostConstruct");
     }
 
     @PreDestroy
-    public void PreDestory(){
+    public void preDestory(){
         System.out.println("执行Componet2 PostConstructInit: PreDestory");
     }
 

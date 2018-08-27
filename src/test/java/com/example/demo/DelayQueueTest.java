@@ -17,19 +17,21 @@ public class DelayQueueTest {
         System.out.println("queue put done");
 
         long start = System.currentTimeMillis();
-        while (!queue.isEmpty()) {
-            new Thread(() -> {
-                try {
+
+        new Thread(() -> {
+            try {
+                while (!queue.isEmpty()) {
                     DelayTask task = queue.take();
                     long usetime = System.currentTimeMillis() - start;
                     System.out.println(task.name + " usetime: " + usetime);
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
-            }).start();
 
-        }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+
         long usetime = System.currentTimeMillis() - start;
         System.out.println("main finished.usetime: " + usetime);
     }

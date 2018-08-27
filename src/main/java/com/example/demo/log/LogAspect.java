@@ -3,17 +3,15 @@ package com.example.demo.log;
 import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class LogAspect {
     @Autowired
     private HttpServletRequest request;
@@ -41,7 +39,7 @@ public class LogAspect {
 
     @Around(value = "controllerLog() || utilLog() || serviceLog() || commonServiceLog() || adapterLog()")
     //@Around(value = "controllerLog()")
-    public Object LogAround(ProceedingJoinPoint joinPoint) throws Throwable {
+    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         return getObject(joinPoint);
     }
 
